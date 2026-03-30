@@ -18,14 +18,14 @@ export default function HeroSection() {
               <img
                 src="https://www.mvne.co.za/mvne-logo.png"
                 alt="MVNE"
-                className="h-10 object-contain bg-white/90 rounded px-2 py-1"
+                className="h-10 w-auto max-w-[130px] object-contain bg-white/90 rounded px-2 py-1"
               />
             </a>
             <a href="https://www.dsg.co.za" target="_blank" rel="noopener noreferrer">
               <img
                 src="https://www.dsg.co.za/media/qj2fraey/dsg-logo.png"
                 alt="DSG"
-                className="h-10 object-contain bg-white/90 rounded px-2 py-1"
+                className="h-8 w-auto max-w-[100px] object-contain bg-white/90 rounded px-2 py-1"
               />
             </a>
           </div>
