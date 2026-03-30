@@ -23,9 +23,9 @@ export default function HeroSection() {
             </a>
             <a href="https://www.dsg.co.za" target="_blank" rel="noopener noreferrer">
               <img
-                src="https://dsg.co.za/assets/logo/colour/DSG_Logo_RED.png"
+                src="/dsg-badge.png"
                 alt="DSG"
-                className="h-8 w-auto max-w-[100px] object-contain bg-white/90 rounded px-2 py-1"
+                className="h-12 w-auto object-contain"
               />
             </a>
           </div>
