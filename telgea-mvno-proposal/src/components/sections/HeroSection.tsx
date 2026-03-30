@@ -23,7 +23,7 @@ export default function HeroSection() {
             </a>
             <a href="https://www.dsg.co.za" target="_blank" rel="noopener noreferrer">
               <img
-                src="https://www.dsg.co.za/media/qj2fraey/dsg-logo.png"
+                src="https://dsg.co.za/assets/logo/colour/DSG_Logo_RED.png"
                 alt="DSG"
                 className="h-8 w-auto max-w-[100px] object-contain bg-white/90 rounded px-2 py-1"
               />
