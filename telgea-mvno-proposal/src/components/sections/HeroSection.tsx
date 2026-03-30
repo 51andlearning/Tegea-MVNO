@@ -13,13 +13,21 @@ export default function HeroSection() {
       <div className="max-w-5xl mx-auto px-6 py-16 md:py-20">
         {/* Top bar */}
         <div className="flex items-start justify-between mb-14">
-          <div>
-            <p className="font-heading font-semibold text-white text-base tracking-wide">
-              Digital Mobile (Pty) Ltd &mdash; A DSG Company
-            </p>
-            <p className="text-slate-400 text-sm mt-0.5">
-              www.mvne.co.za &nbsp;|&nbsp; www.dsg.co.za
-            </p>
+          <div className="flex items-center gap-4">
+            <a href="https://www.mvne.co.za" target="_blank" rel="noopener noreferrer">
+              <img
+                src="https://www.mvne.co.za/mvne-logo.png"
+                alt="MVNE"
+                className="h-10 object-contain bg-white/90 rounded px-2 py-1"
+              />
+            </a>
+            <a href="https://www.dsg.co.za" target="_blank" rel="noopener noreferrer">
+              <img
+                src="https://www.dsg.co.za/media/qj2fraey/dsg-logo.png"
+                alt="DSG"
+                className="h-10 object-contain bg-white/90 rounded px-2 py-1"
+              />
+            </a>
           </div>
           <Badge variant="outline" className="border-slate-500 text-slate-300 hover:bg-transparent">
             Confidential
