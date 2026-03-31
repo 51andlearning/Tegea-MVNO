@@ -1,25 +1,21 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Source_Sans_3 } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-heading",
-  weight: ["400", "500", "600", "700", "800"],
-  display: "swap",
-});
-
-const sourceSans3 = Source_Sans_3({
-  subsets: ["latin"],
-  variable: "--font-body",
-  weight: ["300", "400", "600", "700"],
+  variable: "--font-inter",
   display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Telgea MVNO Proposal | DSG Digital Mobile Platform",
   description:
-    "Proposal for the licensing of the DSG Digital Mobile Platform — a light MVNO arrangement for Telgea. Prepared by Digital Mobile (Pty) Ltd, a DSG Company.",
+    "A Light MVNO Arrangement — Proposal prepared by Digital Mobile (Pty) Ltd for Telgea. Confidential.",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function RootLayout({
@@ -28,8 +24,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${plusJakartaSans.variable} ${sourceSans3.variable}`}>
+    <html lang="en" className={inter.variable}>
+      <body className="font-[var(--font-inter)] antialiased">
         {children}
       </body>
     </html>

@@ -1,69 +1,103 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  :root {
-    /* MVNE / DSG brand — light mode */
-    --background: 210 40% 98%;        /* #F8FAFC slate-50        */
-    --foreground: 222 47% 11%;        /* #0F172A slate-900        */
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 201 96% 32%;           /* #0369A1 sky-700 (DSG blue) */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 214 32% 91%;         /* #E2E8F0 slate-200         */
-    --secondary-foreground: 222 47% 11%;
-    --muted: 210 40% 96%;             /* #F1F5F9 slate-100         */
-    --muted-foreground: 215 16% 47%;  /* #64748B slate-500         */
-    --accent: 201 96% 32%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 214 32% 91%;            /* #E2E8F0 slate-200         */
-    --input: 214 32% 91%;
-    --ring: 201 96% 32%;
-    --radius: 0.5rem;
-    --chart-1: 201 96% 32%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 43 74% 66%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 27 87% 67%;
-  }
+@custom-variant dark (&:is(.dark *));
 
-  .dark {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
-    --card: 222 47% 14%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 201 96% 48%;
-    --primary-foreground: 222 47% 11%;
-    --secondary: 217 33% 18%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217 33% 18%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 201 96% 48%;
-    --accent-foreground: 222 47% 11%;
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217 33% 18%;
-    --input: 217 33% 18%;
-    --ring: 201 96% 48%;
-  }
+@theme inline {
+  /* shadcn semantic tokens → CSS variables */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* DSG Brand Color Tokens */
+  --color-dsg-navy: var(--dsg-navy);
+  --color-dsg-navy-deep: var(--dsg-navy-deep);
+  --color-dsg-blue: var(--dsg-blue);
+  --color-dsg-blue-mid: var(--dsg-blue-mid);
+  --color-dsg-blue-light: var(--dsg-blue-light);
+  --color-dsg-blue-pale: var(--dsg-blue-pale);
+  --color-dsg-red: var(--dsg-red);
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-    font-family: var(--font-body, "Source Sans 3", sans-serif);
-  }
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading, "Plus Jakarta Sans", sans-serif);
-  }
+:root {
+  --radius: 0.5rem;
+
+  /* ─── DSG Brand Palette ──────────────────── */
+  /* Extracted directly from proposal PDF       */
+  --dsg-navy:      #0E2748;   /* primary dark bg  */
+  --dsg-navy-deep: #0E4660;   /* deeper navy tone */
+  --dsg-blue:      #006FC0;   /* action / CTA     */
+  --dsg-blue-mid:  #7EA8C8;   /* muted blue       */
+  --dsg-blue-light:#7EC7E8;   /* light blue       */
+  --dsg-blue-pale: #ADCDDF;   /* pale text on dark */
+  --dsg-red:       #C70F2D;   /* alert / highlight */
+
+  /* ─── shadcn Semantic Tokens ─────────────── */
+  /* Mapped to DSG palette                      */
+  --background:            #FFFFFF;
+  --foreground:            #0E2748;
+  --card:                  #FFFFFF;
+  --card-foreground:       #0E2748;
+  --popover:               #FFFFFF;
+  --popover-foreground:    #0E2748;
+  --primary:               #0E2748;
+  --primary-foreground:    #FFFFFF;
+  --secondary:             #EBF3FA;
+  --secondary-foreground:  #0E2748;
+  --muted:                 #F1F5F9;
+  --muted-foreground:      #64748B;
+  --accent:                #EBF3FA;
+  --accent-foreground:     #0E2748;
+  --destructive:           #C70F2D;
+  --border:                #DDE8F0;
+  --input:                 #DDE8F0;
+  --ring:                  #006FC0;
+}
+
+.dark {
+  --background:            #0E2748;
+  --foreground:            #ADCDDF;
+  --card:                  #0E4660;
+  --card-foreground:       #FFFFFF;
+  --popover:               #0E4660;
+  --popover-foreground:    #FFFFFF;
+  --primary:               #006FC0;
+  --primary-foreground:    #FFFFFF;
+  --secondary:             #1A3A5C;
+  --secondary-foreground:  #ADCDDF;
+  --muted:                 #1A3A5C;
+  --muted-foreground:      #7EA8C8;
+  --accent:                #1A3A5C;
+  --accent-foreground:     #ADCDDF;
+  --destructive:           #C70F2D;
+  --border:                rgba(255,255,255,0.12);
+  --input:                 rgba(255,255,255,0.12);
+  --ring:                  #7EA8C8;
+}
+
+* {
+  border-color: var(--border);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
 }
