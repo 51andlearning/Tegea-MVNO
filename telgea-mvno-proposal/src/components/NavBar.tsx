@@ -49,15 +49,13 @@ export default function NavBar() {
           <a
             href="#executive-summary"
             onClick={(e) => handleAnchor(e, "#executive-summary")}
-            className="flex items-center gap-2 flex-shrink-0"
+            className="flex items-center flex-shrink-0"
           >
-            <span className="w-2 h-6 bg-[#0369A1] rounded-sm" />
-            <span className="font-heading font-bold text-white text-sm tracking-wide hidden sm:block">
-              DSG Digital Mobile
-            </span>
-            <span className="font-heading font-bold text-white text-sm tracking-wide sm:hidden">
-              DSG DM
-            </span>
+            <img
+              src="/images/digital-mobile-logo.png"
+              alt="Digital Mobile"
+              className="h-8 w-auto"
+            />
           </a>
 
           {/* Desktop nav */}
